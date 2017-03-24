@@ -1,0 +1,78 @@
+<!-- side menu -->
+<ion-menu id="loggedOutMenu" class="main-navigation" [content]="content">
+
+    <!--<ion-header>-->
+        <!--<ion-toolbar>-->
+            <!--<ion-title>Агенција за млади и спорт</ion-title>-->
+        <!--</ion-toolbar>-->
+    <!--</ion-header>-->
+
+    <ion-content class="outer-content">
+
+        <ion-list>
+            <ion-list-header>
+                Агенција за млади и спорт
+            </ion-list-header>
+            <button class="main-navigation__link" ion-item menuClose *ngFor="let p of ams" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                Попусти
+            </ion-list-header>
+            <button ion-item menuClose *ngFor="let p of popusti" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                Организации
+            </ion-list-header>
+            <button ion-item menuClose *ngFor="let p of organizacii" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                Образовни установи
+            </ion-list-header>
+            <button ion-item menuClose *ngFor="let p of obrazovniUstanovi" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                За нас
+            </ion-list-header>
+            <button ion-item menuClose (click)="openKorisniLinkovi()">
+                Корисни линкови
+            </button>
+            <button ion-item menuClose (click)="openPredlozi()">
+                Предлози
+            </button>
+            <button ion-item menuClose (click)="openKontakt()">
+                Контакт
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-footer>
+    <ion-toolbar>
+        <div class="component-tabs">
+            <button class="icon-1 component-tabs__button" (click)="tabPage1()"></button>
+            <button class="icon-2 component-tabs__button" (click)="tabPage2()"></button>
+            <button class="icon-3 component-tabs__button" (click)="tabPage3()"></button>
+            <button class="icon-4 component-tabs__button" (click)="tabPage4()"></button>
+        </div>
+    </ion-toolbar>
+</ion-footer>

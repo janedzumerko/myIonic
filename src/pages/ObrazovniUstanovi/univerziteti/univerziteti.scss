@@ -1,0 +1,30 @@
+page-univerziteti {
+
+  .single-card{
+    padding: 15px 10px 10px;
+  }
+
+  .single-card__image{
+    max-width:60px;
+    min-width:60px;
+  }
+  .single-card__content{
+    width:100%;
+  }
+
+  .single-card__type{
+
+    position: sticky;
+    top: -1px;
+
+    & p{
+      display: block;
+      background: #e6e6e6;
+      margin: 0 0 15px 0;
+      padding: 6px 10px;
+      text-align: center;
+      color: #565656;
+    }
+
+  }
+}

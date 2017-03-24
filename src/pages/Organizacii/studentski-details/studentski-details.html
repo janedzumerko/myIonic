@@ -1,0 +1,70 @@
+<!--
+  Generated template for the StudentskiDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{oneStudentska.Name}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="content-padding">
+
+
+        <img src="http://mladi.ams.mk/images/orgs/{{oneStudentska.ID}}.png">
+
+
+        <div style="text-align:center">
+            <h1>{{oneStudentska.Name}}</h1>
+        </div>
+
+
+
+
+        <ion-icon name="navigate" class="icon-color-silver single-card__contentMargin"
+                  *ngIf="oneStudentska.Address">
+            <span>{{oneStudentska.Address}}</span>
+        </ion-icon>
+
+        <div class="line-separator"
+             *ngIf="oneStudentska.Telephone || oneStudentska.FB || oneStudentska.TW"></div>
+
+        <div class="component-share-icons grid-flex grid-center">
+
+            <a href="tel:{{oneStudentska.Telephone}}" *ngIf="oneStudentska.Telephone"
+               class="component-share-icons__icon">
+                <ion-icon name="call"></ion-icon>
+            </a>
+
+            <a href="{{oneStudentska.FB}}" *ngIf="oneStudentska.FB" class="component-share-icons__icon">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+
+            <a href="{{oneStudentska.TW}}" *ngIf="oneStudentska.TW" class="component-share-icons__icon">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+
+            <a href="mailto:{{oneStudentska.Email}}" *ngIf="oneStudentska.Email" class="component-share-icons__icon">
+                <ion-icon name="mail"></ion-icon>
+            </a>
+
+            <a href="{{oneStudentska.Website}}" *ngIf="oneStudentska.Website" class="component-share-icons__icon">
+                <ion-icon name="md-globe"></ion-icon>
+            </a>
+
+        </div>
+
+        <div class="rendered-html">
+            <p [innerHTML]="oneStudentska.Description"></p>
+        </div>
+
+    </div>
+
+</ion-content>

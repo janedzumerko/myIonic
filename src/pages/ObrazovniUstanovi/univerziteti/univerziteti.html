@@ -1,0 +1,201 @@
+<!--
+  Generated template for the Univerziteti page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>Универзитети</ion-title>
+
+    </ion-navbar>
+
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="Пребарај...">
+    </ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="single-group" *ngIf="sortedPrivatniUniverzteti && searchPrivatniAvailable">
+        <div class="single-card__type">
+            <p>Приватни Универзитети</p>
+        </div>
+        <div class="single-card" *ngFor="let singleUniverziteti of sortedPrivatniUniverzteti, let indexItem = index">
+
+            <div class="grid-flex">
+                <div class="single-card__image">
+                    <img src="http://mladi.ams.mk/images/universities/{{singleUniverziteti.ID}}.png" alt="">
+                    <!--<img src="http://mladi.ams.mk/images/universities/1.png" alt="">-->
+                </div>
+                <div class="single-card__content">
+                    <ion-card-header>
+                        {{singleUniverziteti.Name}}
+                    </ion-card-header>
+
+                    <ion-card-content>
+
+                        <ion-icon name="navigate" class="icon-color-silver single-card__contentMargin"
+                                  *ngIf="singleUniverziteti.Address">
+                            <span>{{singleUniverziteti.Address}}</span>
+                        </ion-icon>
+
+                        <div class="line-separator"
+                             *ngIf="singleUniverziteti.Telephone || singleUniverziteti.FB || singleUniverziteti.TW"></div>
+
+                        <div class="grid-flex">
+
+                            <a href="tel:{{singleUniverziteti.Telephone}}" *ngIf="singleUniverziteti.Telephone"
+                               class="single-card__icon">
+                                <ion-icon name="call"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.FB}}" *ngIf="singleUniverziteti.FB" class="single-card__icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.TW}}" *ngIf="singleUniverziteti.TW" class="single-card__icon">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+
+                            <a href="mailto:{{singleUniverziteti.Email}}" *ngIf="singleUniverziteti.Email" class="single-card__icon">
+                                <ion-icon name="mail"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.Website}}" *ngIf="singleUniverziteti.Website" class="single-card__icon">
+                                <ion-icon name="md-globe"></ion-icon>
+                            </a>
+
+                        </div>
+
+                    </ion-card-content>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="single-group" *ngIf="sortedDrzhavniUniverziteti && searchDrzavniAvailable">
+        <div class="single-card__type">
+            <p>Државни Универзитети</p>
+        </div>
+        <div class="single-card" *ngFor="let singleUniverziteti of sortedDrzhavniUniverziteti, let indexItem = index">
+
+            <div class="grid-flex">
+                <div class="single-card__image">
+                    <img src="http://mladi.ams.mk/images/universities/{{singleUniverziteti.ID}}.png" alt="">
+                    <!--<img src="http://mladi.ams.mk/images/universities/1.png" alt="">-->
+                </div>
+                <div class="single-card__content">
+                    <ion-card-header>
+                        {{singleUniverziteti.Name}}
+                    </ion-card-header>
+
+                    <ion-card-content>
+
+                        <ion-icon name="navigate" class="icon-color-silver single-card__contentMargin"
+                                  *ngIf="singleUniverziteti.Address">
+                            <span>{{singleUniverziteti.Address}}</span>
+                        </ion-icon>
+
+                        <div class="line-separator"
+                             *ngIf="singleUniverziteti.Telephone || singleUniverziteti.FB || singleUniverziteti.TW"></div>
+
+                        <div class="grid-flex">
+
+                            <a href="tel:{{singleUniverziteti.Telephone}}" *ngIf="singleUniverziteti.Telephone"
+                               class="single-card__icon">
+                                <ion-icon name="call"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.FB}}" *ngIf="singleUniverziteti.FB" class="single-card__icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.TW}}" *ngIf="singleUniverziteti.TW" class="single-card__icon">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+
+                            <a href="mailto:{{singleUniverziteti.Email}}" *ngIf="singleUniverziteti.Email" class="single-card__icon">
+                                <ion-icon name="mail"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.Website}}" *ngIf="singleUniverziteti.Website" class="single-card__icon">
+                                <ion-icon name="link"></ion-icon>
+                            </a>
+
+                        </div>
+
+                    </ion-card-content>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="single-group" *ngIf="sortedOstanatiUstanovi && searchOstanatiAvailable">
+        <div class="single-card__type">
+            <p>Останати високообразовни установи</p>
+        </div>
+        <div class="single-card" *ngFor="let singleUniverziteti of sortedOstanatiUstanovi, let indexItem = index">
+
+            <div class="grid-flex">
+                <div class="single-card__image">
+                    <img src="http://mladi.ams.mk/images/universities/{{singleUniverziteti.ID}}.png" alt="">
+                    <!--<img src="http://mladi.ams.mk/images/universities/1.png" alt="">-->
+                </div>
+                <div class="single-card__content">
+                    <ion-card-header>
+                        {{singleUniverziteti.Name}}
+                    </ion-card-header>
+
+                    <ion-card-content>
+
+                        <ion-icon name="navigate" class="icon-color-silver single-card__contentMargin"
+                                  *ngIf="singleUniverziteti.Address">
+                            <span>{{singleUniverziteti.Address}}</span>
+                        </ion-icon>
+
+                        <div class="line-separator"
+                             *ngIf="singleUniverziteti.Telephone || singleUniverziteti.FB || singleUniverziteti.TW"></div>
+
+                        <div class="grid-flex">
+
+                            <a href="tel:{{singleUniverziteti.Telephone}}" *ngIf="singleUniverziteti.Telephone"
+                               class="single-card__icon">
+                                <ion-icon name="call"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.FB}}" *ngIf="singleUniverziteti.FB" class="single-card__icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.TW}}" *ngIf="singleUniverziteti.TW" class="single-card__icon">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+
+                            <a href="mailto:{{singleUniverziteti.Email}}" *ngIf="singleUniverziteti.Email" class="single-card__icon">
+                                <ion-icon name="mail"></ion-icon>
+                            </a>
+
+                            <a href="{{singleUniverziteti.Website}}" *ngIf="singleUniverziteti.Website" class="single-card__icon">
+                                <ion-icon name="md-globe"></ion-icon>
+                            </a>
+
+                        </div>
+
+                    </ion-card-content>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</ion-content>

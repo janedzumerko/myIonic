@@ -1,0 +1,68 @@
+<!--
+  Generated template for the NevladiniOrganizacii page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Невладини Организации</ion-title>
+  </ion-navbar>
+
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="Пребарај...">
+  </ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="single-card" *ngFor="let singleNevladiniOrg of nevladiniOrg" (click)="openDetailPage(singleNevladiniOrg)">
+
+    <div class="component-content-header">
+
+      <ion-card-header>
+        {{singleNevladiniOrg.Name}}
+      </ion-card-header>
+
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div class="content-padding">
+
+      <div class="grid-flex">
+
+        <a href="{{singleNevladiniOrg.Telephone}}" *ngIf="singleNevladiniOrg.Telephone" class="single-card__icon">
+          <ion-icon name="call"></ion-icon>
+        </a>
+
+        <a href="{{singleNevladiniOrg.FB}}" *ngIf="singleNevladiniOrg.FB" class="single-card__icon">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="{{singleNevladiniOrg.TW}}" *ngIf="singleNevladiniOrg.TW" class="single-card__icon">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a href="mailto:{{singleNevladiniOrg.Email}}" *ngIf="singleNevladiniOrg.Email" class="single-card__icon">
+          <ion-icon name="mail"></ion-icon>
+        </a>
+
+        <a href="{{singleNevladiniOrg.Website}}" *ngIf="singleNevladiniOrg.Website" class="single-card__icon">
+          <ion-icon name="md-globe"></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

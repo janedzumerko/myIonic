@@ -1,0 +1,305 @@
+// http://ionicframework.com/docs/v2/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$orangeBackground: #f26522;
+$greenBackground: #86b340;
+$orangeBackground1: #faac18;
+$blackIshBackground: #868686;
+$iconSilverColor: #666666;
+
+h1.simple-heading{
+  font-size:22px;
+  line-height:27px;
+  margin:15px 0 10px !important;
+}
+
+.icon-color-white {
+  color: white !important;
+}
+
+.icon-color-silver {
+  color: $iconSilverColor;
+}
+
+.grid-flex {
+  display: flex;
+}
+
+.grid-center{
+  justify-content:center;
+}
+
+img.aligned-image,
+.rendered-html img {
+  height: 100%;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.rendered-html p,
+p,
+ul li,
+ol li{
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0 0 20px 0;
+}
+
+ul li,
+ol li{
+  margin-bottom:5px;
+}
+
+.menu-inner ion-content{
+  background:white !important;
+
+  & ion-list-header{
+    background: #f3f3f3 !important;
+    font-weight: 700;
+  }
+
+  & ion-list,
+  & ion-list-header{
+    margin:0 !important;
+  }
+
+}
+
+.component-share-icons{
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  margin: 25px 0;
+}
+
+.rendered-html{
+  padding-top:30px;
+}
+
+.content-padding {
+  padding: 15px 15px 0;
+}
+
+.header-type-1 {
+
+  & .toolbar-background {
+    background: $orangeBackground;
+  }
+
+  & .toolbar-title {
+    color: white;
+  }
+
+}
+
+.header-type-2 {
+
+  & .toolbar-background {
+    background: $greenBackground;
+  }
+
+  & .toolbar-title {
+    color: white;
+  }
+
+}
+
+.header-type-3 {
+
+  & .toolbar-background {
+    background: $orangeBackground1;
+  }
+
+  & .toolbar-title {
+    color: white;
+  }
+
+}
+
+.header-type-4 {
+
+  & .toolbar-background {
+    background: $blackIshBackground;
+  }
+
+  & .toolbar-title {
+    color: white;
+  }
+
+  & .segment-button {
+    border-color: white;
+    color: white;
+  }
+
+  & .segment-activated {
+    background: white !important;
+    color: black !important;
+  }
+
+}
+
+.background-orange {
+  background: $orangeBackground;
+}
+
+.background-green {
+  background: $greenBackground;
+}
+
+.background-orange-dark {
+  background: $orangeBackground1;
+}
+
+.background-silver {
+  background: $blackIshBackground;
+}
+
+.icon-1 {
+  background: url('../assets/icons/job-search.svg') no-repeat center center / 25px $orangeBackground;
+}
+
+.icon-2 {
+  background: url('../assets/icons/praksa.svg') no-repeat center center / 25px #86b340;
+}
+
+.icon-3 {
+  background: url('../assets/icons/stipendii.svg') no-repeat center center / 25px #faac18;
+}
+
+.icon-4 {
+  background: url('../assets/icons/obuka.svg') no-repeat center center / 25px $blackIshBackground;
+}
+
+.component-tabs {
+  display: flex;
+  min-height: 54px;
+}
+
+.component-tabs__button {
+  width: 100%;
+  margin:0 !important;
+}
+
+.tab-button-text {
+  font-size: 0 !important;
+}
+
+.footer .toolbar {
+  padding: 0;
+}
+
+.scroll-content {
+  padding: 0 0 55px 0 !important;
+}
+
+.single-card {
+
+  & .single-card__contentMargin span{
+    padding-left: 7px;
+    margin:0;
+  }
+
+  padding: 15px 0 10px;
+  border-bottom: 1px solid #eaeaea;
+
+  &:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+  & ion-card-header {
+    padding: 7px 10px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+    text-overflow: initial;
+    white-space: inherit;
+  }
+
+  & ion-card-content {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .main-navigation__link {
+    display: block;
+
+    opacity: 0;
+  }
+
+  .main-navigation {
+
+    & .main-navigation__link {
+      display: block;
+    }
+
+  }
+
+  & .single-card__icon {
+
+    display: block;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    & ion-icon {
+      font-size: 21px;
+      color: $iconSilverColor;
+      display: block;
+    }
+
+    &.single-card__icon--margin{
+      display:inline-block;
+      margin:0;
+      float:right;
+
+      & ion-icon{
+        font-size:26px;
+      }
+
+    }
+
+  }
+
+  .line-separator {
+    background: #f3f3f3;
+    height: 1px;
+    margin: 10px 0;
+  }
+
+}
+
+.component-share-icons__icon{
+  display:block;
+  margin:0 12px;
+
+  & .icon{
+    font-size:30px;
+    color:$iconSilverColor;
+  }
+
+}
+
+.single-card__image{
+  padding-left: 10px;
+  max-width:60px;
+  min-width:60px;
+}
+
+.single-card__content{
+  width:100%;
+}

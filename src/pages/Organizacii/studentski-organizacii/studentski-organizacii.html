@@ -1,0 +1,80 @@
+<!--
+  Generated template for the StudentskiOrganizacii page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>Студентски Организации</ion-title>
+    </ion-navbar>
+
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="Пребарај...">
+    </ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="single-card" *ngFor="let studentSingleOrg of studentskiOrg" (click)="openDetailPage(studentSingleOrg)">
+
+        <div class="grid-flex">
+
+            <div class="single-card__image">
+                <img src="http://mladi.ams.mk/images/orgs/{{studentSingleOrg.ID}}.png" cache="true" alt="">
+                <!--<img src="http://mladi.ams.mk/images/universities/1.png" alt="">-->
+            </div>
+
+            <div class="single-card__content">
+                <div class="component-content-header">
+                    <ion-card-header>
+                        {{studentSingleOrg.Name}}
+                    </ion-card-header>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="line-separator"></div>
+
+        <div class="content-padding">
+
+            <div class="grid-flex">
+
+                <a href="{{studentSingleOrg.FB}}" *ngIf="studentSingleOrg.FB" class="single-card__icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+
+                <a href="{{studentSingleOrg.TW}}" *ngIf="studentSingleOrg.TW" class="single-card__icon">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+
+                <a href="mailto:{{studentSingleOrg.Email}}" *ngIf="studentSingleOrg.Email" class="single-card__icon">
+                    <ion-icon name="mail"></ion-icon>
+                </a>
+
+                <a href="{{studentSingleOrg.Website}}" *ngIf="studentSingleOrg.Website" class="single-card__icon">
+                    <ion-icon name="md-globe"></ion-icon>
+                </a>
+
+                <a href="http://www.google.com/maps/place/{{studentSingleOrg.LocationX}},{{studentSingleOrg.LocationY}}" *ngIf="studentSingleOrg.LocationX" class="single-card__icon">
+                    <ion-icon name="md-navigate"></ion-icon>
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</ion-content>

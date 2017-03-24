@@ -1,0 +1,44 @@
+<!--
+  Generated template for the Vrabotuvanja page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header-type-1">
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu" class="icon-color-white"></ion-icon>
+        </button>
+
+        <ion-title>Вработувања</ion-title>
+    </ion-navbar>
+
+    <ion-searchbar class="background-orange" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="Пребарај...">
+    </ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <div class="single-card" *ngFor="let vrabotuvanje of vrabotuvanja">
+            <ion-card-header (click)="openInAppBrowser(vrabotuvanje)">
+                {{vrabotuvanje.Name}}
+            </ion-card-header>
+
+            <ion-card-content>
+                {{vrabotuvanje.EduSiteID}} - {{vrabotuvanje.publishedTime}}
+                <a href="#" class="single-card__icon single-card__icon--margin" (click)="sharePopup(vrabotuvanje.Name, vrabotuvanje.Link)">
+                    <ion-icon ios="ios-share" md="md-share"></ion-icon>
+                </a>
+            </ion-card-content>
+
+        </div>
+
+
+    </ion-list>
+
+</ion-content>

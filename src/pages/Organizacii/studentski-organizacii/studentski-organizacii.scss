@@ -1,0 +1,48 @@
+page-studentski-organizacii {
+
+  .component-content-trigger {
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+
+    &.active-content {
+      max-height: 9999999px;
+      opacity: 1;
+    }
+
+  }
+
+  .component-content-header {
+
+    position: relative;
+
+    padding-right:40px;
+
+    & icon-card-header {
+      padding: 0;
+    }
+
+    & ion-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 13px;
+      margin: auto;
+      font-size: 25px;
+      height: 31px;
+      display: block;
+      color: #b1b1b1;
+      transform: rotate(180deg);
+
+      transition: all 0.3s;
+    }
+
+    &.active-content ion-icon {
+      transform: rotate(0deg);
+    }
+
+  }
+
+}

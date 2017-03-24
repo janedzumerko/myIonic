@@ -1,0 +1,67 @@
+<!--
+  Generated template for the Obuki page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header-type-4">
+
+  <ion-toolbar no-border-top>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" class="icon-color-white"></ion-icon>
+    </button>
+
+    <ion-segment [(ngModel)]="obuki" (ionChange)="activeSegment()">
+      <ion-segment-button value="seminari">
+        Семинари
+      </ion-segment-button>
+      <ion-segment-button value="konferencii">
+        Конференции
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-toolbar>
+
+  <ion-searchbar class="background-silver" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="Пребарај...">
+  </ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="obuki">
+    <ion-list *ngSwitchCase="'seminari'">
+
+      <div class="single-card" *ngFor="let seminar of seminari">
+        <ion-card-header (click)="openInAppBrowser(seminar)">
+          {{seminar.Title}}
+        </ion-card-header>
+
+        <ion-card-content>
+          {{seminar.EduSiteName}} - {{seminar.publishedTime}}
+          <a href="#" class="single-card__icon single-card__icon--margin" (click)="sharePopup(seminar.Name, seminar.Link)">
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+          </a>
+        </ion-card-content>
+      </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'konferencii'">
+
+      <div class="single-card" *ngFor="let konferencija of konferencii">
+        <ion-card-header (click)="openInAppBrowser(konferencija)">
+          {{konferencija.Title}}
+        </ion-card-header>
+
+        <ion-card-content>
+          {{konferencija.EduSiteName}} - {{konferencija.publishedTime}}
+          <a href="#" class="single-card__icon single-card__icon--margin" (tap)="sharePopup(konferencija.Name, konferencija.Link)">
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+          </a>
+        </ion-card-content>
+      </div>
+
+    </ion-list>
+
+  </div>
+</ion-content>
